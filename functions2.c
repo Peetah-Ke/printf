@@ -121,6 +121,7 @@ int flags, int width, int precision, int size)
 	for (i = i - 1; i >= 0; i--)
 	{
 		char z = str[i];
+
 		write(1, &z, 1);
 		count++;
 	}
