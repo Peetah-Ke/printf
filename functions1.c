@@ -21,7 +21,7 @@ int flags, int width, int precision, int size)
 
 	if (num == 0)
 		buffer[i--] = '0';
-		buffer[BUFF_SIZE - 1] = '\0';
+	buffer[BUFF_SIZE - 1] = '\0';
 	while (num > 0)
 	{
 		buffer[i--] = (num % 10) + '0';
@@ -54,15 +54,15 @@ int flags, int width, int precision, int size)
 
 	if (num == 0)
 		buffer[i--] = '0';
-		buffer[BUFF_SIZE - 1] = '\0';
-		while (num > 0)
-		{
-			buffer[i--] = (num % 8) + '0';
-			num /= 8;
-		}
-		if (flags & F_HASH && init_num != 0)
-			buffer[i--] = '0';
-			i++;
+	buffer[BUFF_SIZE - 1] = '\0';
+	while (num > 0)
+	{
+		buffer[i--] = (num % 8) + '0';
+		num /= 8;
+	}
+	if (flags & F_HASH && init_num != 0)
+		buffer[i--] = '0';
+	i++;
 	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
 }
 
@@ -129,12 +129,12 @@ int flags, char flag_ch, int width, int precision, int size)
 
 	if (num == 0)
 		buffer[i--] = '0';
-		buffer[BUFF_SIZE - 1] = '\0';
-		while (num > 0)
-		{
-			buffer[i--] = map_to[num % 16];
-			num /= 16;
-		}
+	buffer[BUFF_SIZE - 1] = '\0';
+	while (num > 0)
+	{
+		buffer[i--] = map_to[num % 16];
+		num /= 16;
+	}
 	if (flags & F_HASH && init_num != 0)
 	{
 		buffer[i--] = flag_ch;

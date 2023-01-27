@@ -66,7 +66,7 @@ int flags, int width, int precision, int size)
 		{
 			for (i = width - length; i > 0; i--)
 				write(1, " ", 1);
-				write(1, &str[0], length);
+			write(1, &str[0], length);
 		return (width);
 		}
 	}
@@ -118,7 +118,7 @@ int flags, int width, int precision, int size)
 
 	if (n == 0)
 		buffer[i--] = '0';
-		buffer[BUFF_SIZE - 1] = '\0';
+	buffer[BUFF_SIZE - 1] = '\0';
 
 		num = (unsigned long int)n;
 		if (n < 0)

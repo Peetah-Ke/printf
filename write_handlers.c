@@ -108,7 +108,7 @@ int length, char padd, char extra_c)
 	{
 		for (i = 1; i < width - length + 1; i++)
 			buffer[i] = padd;
-			buffer[i] = '\0';
+		buffer[i] = '\0';
 			if (flags & F_MINUS && padd == ' ')/* Asign extra char to left of buffer */
 			{
 				if (extra_c)
@@ -167,14 +167,13 @@ int flags, int width, int precision, int size)
 		buffer[--ind] = '0';
 		length++;
 	}
-
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		padd = '0';
 	if (width > length)
 	{
 		for (i = 0; i < width - length; i++)
 			buffer[i] = padd;
-			buffer[i] = '\0';
+		buffer[i] = '\0';
 		if (flags & F_MINUS) /* Asign extra char to left of buffer [buffer>padd]*/
 		{
 			return (write(1, &buffer[ind], length) + write(1, &buffer[0], i));
@@ -209,7 +208,7 @@ int width, int flags, char padd, char extra_c, int padd_start)
 	{
 		for (i = 3; i < width - length + 3; i++)
 			buffer[i] = padd;
-			buffer[i] = '\0';
+		buffer[i] = '\0';
 		if (flags & F_MINUS && padd == ' ')/* Asign extra char to left of buffer */
 		{
 			buffer[--ind] = 'x';
@@ -230,10 +229,10 @@ int width, int flags, char padd, char extra_c, int padd_start)
 		{
 			if (extra_c)
 				buffer[--padd_start] = extra_c;
-				buffer[1] = '0';
-				buffer[2] = 'x';
+			buffer[1] = '0';
+			buffer[2] = 'x';
 			return (write(1, &buffer[padd_start], i - padd_start) +
-				write(1, &buffer[ind], length - (1 - padd_start) - 2));
+			write(1, &buffer[ind], length - (1 - padd_start) - 2));
 		}
 	}
 	buffer[--ind] = 'x';
